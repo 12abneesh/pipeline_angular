@@ -9,7 +9,7 @@ phases:
       - npm run build
   post_build:
     commands:
-      - aws s3 sync ${*} s3://${codebuild-artifacts123123} --delete
+      - aws s3 sync ${'*'} s3://${'codebuild-artifacts123123'} --delete
  
 artifacts:
   files:
