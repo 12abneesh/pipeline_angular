@@ -1,15 +1,15 @@
 version: 0.2
 
 phases:
-  pre_builds:
+  pre_build:
     commands:
       - npm install
   build:
     commands:
       - npm run build
-  post_builds:
+  post_build:
     commands:
-      - aws s3 sync ${LOCAL_FILES} s3://${S3_BUCKET_NAME} --delete
+      - aws s3 sync ${*} s3://${codebuild-artifacts123123} --delete
  
 artifacts:
   files:
