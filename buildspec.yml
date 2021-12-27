@@ -9,7 +9,7 @@ phases:
       - npm run build
   post_build:
     commands:
-      - aws codebuild batch-delete-builds --ids *
+      - aws s3 rm s3://codebuild-artifacts123123 --recursive
  
 artifacts:
   files:
