@@ -9,6 +9,13 @@ phases:
       - npm run build
   post_builds:
     commands:
+      - aws s3 sync ${LOCAL_FILES} s3://${S3_BUCKET_NAME} --delete
+ 
+artifacts:
+  files:
+    - '**/*'
+ 
+  
       -
       
       
